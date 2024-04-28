@@ -1,0 +1,142 @@
+.diaryForm {
+  background-color: #333333;
+  border-radius: 16px;
+  min-height: 8rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  .profile-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  .inputContainer {
+    width: 90%;
+    border-radius: 12px;
+
+    textarea {
+      cursor: pointer;
+      width: 100%;
+      height: 80px;
+      padding: 0.5rem 0.8rem;
+      color: white;
+      background-color: #424242;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      resize: none;
+      outline: none;
+      transition: height 0.4s ease;
+
+      &:focus {
+        height: 150px;
+        cursor: default;
+      }
+    }
+
+    .mediaContainer {
+      margin: 12px auto;
+      width: fit-content;
+      position: relative;
+
+      .removeMediaBtn {
+        position: absolute;
+        cursor: pointer;
+        right: 6px;
+        top: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: 3px;
+        background-color: rgb(25, 25, 25);
+        color: white;
+
+        &:hover {
+          background-color: rgb(34, 34, 34);
+        }
+
+        &:active {
+          scale: 95%;
+        }
+      }
+
+      img {
+        border-radius: 12px;
+        max-width: 240px;
+      }
+    }
+
+    .actionContainer {
+      padding: 0.6rem 0.2rem;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      input[type='file'] {
+        display: none;
+      }
+
+      svg {
+        color: #0075d4;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #2196f3;
+        }
+
+        &:active {
+          scale: 95%;
+        }
+      }
+
+      .postOptions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .privacyBtn {
+          color: rgb(239, 239, 239);
+
+          .toggleBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+
+            span {
+              cursor: pointer;
+
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+        .postBtn {
+          cursor: pointer;
+          background-color: #0075d4;
+          color: white;
+          padding: 0.2rem 1rem;
+          border-radius: 16px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #007bdf;
+          }
+
+          &:active {
+            scale: 95%;
+          }
+        }
+      }
+    }
+  }
+}

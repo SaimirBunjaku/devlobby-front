@@ -1,0 +1,326 @@
+.landingCard {
+  $breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+  );
+
+  .card {
+    transform-style: preserve-3d;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    border: 1px solid #575757;
+    color: #fff;
+    transition: transform 1200ms;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    font-family: "Poppins", sans-serif;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      transform: rotateY(180deg);
+    }
+    &:focus {
+      transform: rotateY(180deg);
+    }
+
+    .front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: linear-gradient(
+        to bottom right,
+        #6a9eff,
+        #5e96fd,
+        #74a4ff,
+        #a4c4ff,
+        #fff,
+        #fff,
+        #fff,
+        #fff,
+        #fff
+      );
+      transform: rotateY(180deg);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 0px;
+
+      h3 {
+        color: #306ee5;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #306ee5 !important;
+        margin: 15px 0;
+      }
+
+      .card-text {
+        padding: 10px;
+
+        h3 {
+          text-align: center;
+        }
+        p {
+          text-align: center;
+        }
+      }
+
+      button {
+        background-color: #306ee5;
+        color: #fff;
+        &:hover {
+          background-color: #1a1a1a;
+          color: #306ee5;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    #icon img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  @media screen and (min-width: 976px) {
+    .card {
+      width: 280px;
+      height: 400px;
+
+      p {
+        font-size: 14px;
+      }
+
+      #icon img {
+        width: 70px;
+        height: 70px;
+      }
+
+      #logo img {
+        width: 150px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 854px) and (max-width: 975px) {
+    .card {
+      width: 250px;
+      height: 370px;
+
+      p {
+        font-size: 12px;
+      }
+
+      #icon img {
+        width: 70px;
+        height: 70px;
+      }
+
+      button {
+        padding: 7px 15px;
+        font-size: 14px;
+      }
+
+      #logo img {
+        width: 130px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 709px) and (max-width: 853px) {
+    .card {
+      width: 200px;
+      height: 340px;
+
+      h3 {
+        text-justify: inter-word;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      #icon img {
+        width: 50px;
+        height: 50px;
+      }
+
+      button {
+        padding: 5px 12px;
+        font-size: 14px !important;
+      }
+
+      #logo img {
+        width: 100px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 709px) and (max-width: 853px) {
+    .card {
+      width: 200px;
+      height: 340px;
+
+      h3 {
+        font-size: 14px;
+        text-justify: inter-word;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      #icon img {
+        width: 50px;
+        height: 50px;
+      }
+
+      button {
+        padding: 7px 12px;
+        font-size: 10px;
+      }
+
+      .back {
+        h3 {
+          font-size: 14px;
+        }
+      }
+
+      #logo img {
+        width: 100px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 490px) and (max-width: 708px) {
+    .card {
+      width: 150px;
+      height: 270px;
+
+      h3 {
+        font-size: 12px;
+        text-justify: inter-word;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      #icon img {
+        width: 50px;
+        height: 50px;
+      }
+
+      button {
+        padding: 5px 12px;
+        font-size: 10px;
+      }
+
+      .back {
+        h3 {
+          font-size: 14px;
+        }
+      }
+
+      #logo img {
+        width: 80px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 177px) and (max-width: 489px) {
+    .card {
+      width: 290px;
+      height: 410px;
+
+      h3 {
+        font-size: 16px;
+        text-justify: inter-word;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      #icon img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .front {
+        h3 {
+          font-size: 16px;
+        }
+      }
+
+      .back {
+        h3 {
+          font-size: 16px;
+        }
+      }
+
+      #logo img {
+        width: 120px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 176px) {
+    .card {
+      width: 150px;
+      height: 270px;
+
+      h3 {
+        font-size: 12px;
+        text-justify: inter-word;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      #icon img {
+        width: 50px;
+        height: 50px;
+      }
+
+      button {
+        padding: 5px 12px;
+        font-size: 10px;
+      }
+
+      .back {
+        h3 {
+          font-size: 14px;
+        }
+      }
+
+      #logo img {
+        width: 80px;
+      }
+    }
+  }
+}

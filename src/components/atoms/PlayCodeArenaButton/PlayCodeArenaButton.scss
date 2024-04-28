@@ -1,0 +1,92 @@
+:root {
+  --primary-color: #2196f3;
+  --secondary-color: #255784;
+}
+
+.playCodeArenaButton {
+  .playcodearena-button {
+    position: relative;
+    display: flex;
+    padding: 15px 30px;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: #1a1a1a;
+    font-size: 1.5rem;
+    overflow: hidden;
+    transition: 0.2s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: var(--secondary-color);
+      background: var(--primary-color);
+      box-shadow: 0 0 10px var(--primary-color), 0 0 40px var(--primary-color),
+        0 0 80px var(--primary-color), 0 0 160px var(--primary-color);
+      text-decoration-color: var(--primary-color);
+      transition-delay: 1s;
+    }
+    span {
+      position: absolute;
+      display: block;
+      background: linear-gradient(90deg, transparent, var(--primary-color));
+      transition: transform 1s;
+    }
+
+    span:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transform: translateX(-115%);
+    }
+
+    span:nth-child(2) {
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      transform: translateY(-130%);
+    }
+
+    span:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      transform: translateX(100%);
+    }
+
+    span:nth-child(4) {
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      transform: translateY(100%);
+    }
+
+    &:hover span:nth-child(1) {
+      transform: translateX(100%);
+      transition: transform 1s;
+    }
+
+    &:hover span:nth-child(2) {
+      transform: translateY(100%);
+      transition: transform 1s 0.25s;
+    }
+
+    &:hover span:nth-child(3) {
+      transform: translateX(-115%);
+      transition: transform 1s 0.5s;
+    }
+
+    &:hover span:nth-child(4) {
+      transform: translateY(-130%);
+      transition: transform 1s 0.75s;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+.newsletter {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center; // Centers content horizontally in the flex container
+  align-items: center; // Centers content vertically in the flex container
+  gap: 90px;
+  padding: 2rem;
+  background-color: #0070ec; // Replace with the color you prefer
+  color: white;
+  border-radius: 15px;
+  width: 70%; // You might want to change this to 100% if you want to take the full width
+  margin: auto; // This centers the container in the viewport
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; // These zero values work with margin: auto to center the element
+  height: fit-content; // This makes the height fit the content
+  margin-bottom: -15px;
+  z-index: 10;
+  position: relative;
+  .newsletter-content {
+    max-width: 60%;
+
+    h2 {
+      font-size: 1.5rem; // Adjust font size as needed
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      width: 500px;
+      border-radius: 20px;
+
+      input,
+      button {
+        padding: 1rem;
+        border: none;
+        border-radius: 20px; // Increased border-radius for rounded edges
+        min-width: 200px;
+        font-size: 1rem; // Adjust the font size as needed
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08); // Adds shadow to the elements
+        transition: box-shadow 0.3s; // Smooth transition for the shadow
+        outline: none; // Removes the default focus outline
+        width: max-content;
+      }
+
+      input {
+        background-color: #ffffff; // Light background for the input
+        color: #0a0a0a; // Text color for the input
+        width: 250px;
+      }
+
+      button {
+        background-color: #0046ad; // Background color for the button
+        color: white; // Text color for the button
+        padding: 1rem 1.5rem; // Adjust padding to better fit the text
+        margin-left: -30px; // Overlap the button slightly over the input
+
+        &:hover {
+          background-color: #003887; // Darker background color on hover
+          box-shadow: 0 6px 6px rgba(50, 50, 93, 0.13),
+            0 3px 3px rgba(0, 0, 0, 0.08); // Increased shadow on hover
+        }
+      }
+    }
+
+    // Add focus styles for better accessibility
+    input:focus,
+    button:focus {
+      box-shadow: 0 0 0 2px #0070ec; // Adds a blue outline-like box shadow to indicate focus
+    }
+
+    small {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+
+    a {
+      color: #ace0f9; // Replace with the color you prefer
+    }
+  }
+
+  .newsletter-image {
+    max-width: 30%;
+    margin-top: -60px;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px; // Adjust as necessary
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .newsletter {
+    gap: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: fit-content;
+    max-width: 1024px;
+    .newsletter-form {
+      justify-content: center;
+      margin-left: 15%;
+    }
+    img {
+      width: 50%;
+      height: auto;
+    }
+
+    .newsletter-content {
+      max-width: 100%;
+    }
+
+    .newsletter-image {
+      max-width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .newsletter:not(.newsletter-form) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    .newsletter-content {
+      max-width: 100%;
+    }
+
+    .newsletter-form {
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        max-width: max-content;
+        text-align: center;
+      }
+
+      button {
+        width: 100%;
+        max-width: max-content;
+        margin-left: 0;
+      }
+    }
+  }
+}

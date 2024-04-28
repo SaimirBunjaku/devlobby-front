@@ -1,0 +1,115 @@
+$theme-background-light: #ffffff;
+$theme-border-light: #dfe0eb;
+$theme-title: #252733;
+$theme-blue: #3751ff;
+$theme-gray-light: #9fa2b4;
+$theme-gray-bluish: #4b506d;
+$theme-background-dark: #282828;
+
+@mixin button-styles($bg-color, $text-color, $hover-color) {
+  padding: 0.55rem 1rem;
+  font-weight: 550;
+  margin: 0;
+  border: none;
+  color: $text-color;
+  background-color: $bg-color;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+.modalConfirm {
+  .modalContainer {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 60%;
+    z-index: 2;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    background-color: $theme-background-light;
+    border: 2px solid $theme-border-light;
+    font-family: sans-serif;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &.show {
+      opacity: 1;
+    }
+
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      justify-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid $theme-border-light;
+
+      .title {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        color: $theme-title;
+      }
+
+      .closeBtn {
+        color: $theme-gray-bluish;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        svg {
+          width: 80%;
+        }
+      }
+      .closeBtn:hover {
+        color: rgb(71, 5, 5);
+      }
+    }
+
+    .body {
+      background-color: white;
+      font-size: 14px;
+      padding: 16px 20px;
+      padding-bottom: 4px;
+      width: 90%;
+      letter-spacing: 0.1px;
+    }
+
+    .modalFooter {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+
+      button {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .cancelBtn {
+        @include button-styles(rgb(115, 114, 114), white, rgb(87, 85, 85));
+      }
+      .confirmBtn {
+        @include button-styles(#0053b1, white, #0070ec);
+      }
+    }
+  }
+
+  @media only screen and (max-device-width: 844px) and (orientation: portrait) {
+    .modalContainer {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .modalContainer {
+      width: 70%;
+    }
+  }
+}

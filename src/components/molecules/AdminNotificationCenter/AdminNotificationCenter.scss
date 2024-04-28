@@ -1,0 +1,84 @@
+.notification-center {
+  position: relative;
+  padding: 0 50px;
+}
+
+.notification-center .notification-icon {
+  position: relative;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.64);
+  transition: all 0.3s ease-in-out;
+}
+
+.notification-center .notification-icon:hover {
+  background-color: #f2f2f2; 
+}
+
+.notification-center .notification-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #555; 
+  transition: all 0.3s ease-in-out;
+}
+
+.notification-center .notifications {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 150px;
+  background-color: #fff; 
+  border: 1px solid #9aceff;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.notification-center .notifications p {
+  margin: 8px 0;
+  font-size: 13px;
+  color: #333; 
+  text-align: center;
+}
+
+/* Dark mode styles */
+.notification-center.dark-mode .notification-icon {
+  background-color: #333; 
+  box-shadow: 0 2px 5px rgba(211, 211, 211, 0.64);
+}
+
+.notification-center.dark-mode .notification-icon svg {
+  color: #fff; 
+}
+
+.notification-center.dark-mode .notifications {
+  background-color: #222222; 
+  border: 1px solid #9aceff; 
+}
+
+.notification-center.dark-mode .notifications p {
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .notification-center .notifications {
+    width: 250px;
+  }
+  .notification-center {
+    padding: 0 10px;
+  }
+  .notification-center .notifications {
+    width: 70px;
+  }
+
+}

@@ -1,0 +1,193 @@
+.diaryCard {
+  background-color: #2d2d2d;
+  border-radius: 16px;
+  color: #eaeaea;
+  font-weight: 200;
+  font-size: 1rem;
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: 9% 1fr 6%;
+  gap: 4px;
+  padding: 10px;
+  padding-top: 20px;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      margin-top: 0.2rem;
+      border-radius: 50%;
+    }
+  }
+
+  .optionsBtnContainer {
+    display: none;
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 0.2rem;
+
+      .headerInfo {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .fullname {
+          font-weight: 700;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .username {
+          font-weight: 300;
+        }
+
+        .privacyInfo {
+          display: flex;
+          .privacy-img {
+            width: 1rem;
+            svg {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .dateOfCreation {
+        padding-top: 3px;
+        font-size: 0.7rem;
+
+        &:hover {
+          // TODO: Show dd/mm/year
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .cardBody {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .imageContainer {
+        display: flex;
+        .media-img {
+          cursor: pointer;
+          border-radius: 16px;
+          margin: auto;
+          max-width: 40%;
+          box-shadow: -10px 0px 13px -7px #00000050,
+            10px 0px 13px -7px #00000050, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    .cardFooter {
+      .upvoteContainer {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        width: fit-content;
+        margin-left: -5px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          cursor: pointer;
+          color: rgba(222, 0, 44, 0.623);
+        }
+
+        &:hover svg {
+          background-color: rgba(180, 60, 84, 0.295);
+        }
+
+        svg {
+          padding: 6px;
+          border-radius: 100%;
+          transition: background-color 0.3s ease;
+        }
+      }
+
+      .upVoted {
+        color: rgba(222, 0, 44, 0.623);
+      }
+    }
+  }
+
+  .right {
+    .optionsBtn {
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #0078d3;
+        background-color: #1c446380;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .diaryCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+
+    .optionsBtnContainer {
+      position: relative;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+      .optionsBtn {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -42px;
+        right: -8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #0078d3;
+          background-color: #1c446380;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .right {
+      display: none;
+    }
+  }
+}

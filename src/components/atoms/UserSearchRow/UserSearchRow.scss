@@ -1,0 +1,45 @@
+.userSearchRow {
+  .userContainer {
+    font-size: 15px;
+    padding: 4px 12px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #101055;    transition: background-color 0.2s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(212, 218, 223);
+    }
+    &:active {
+      background-color: #00a6ff4d;
+    }
+
+    .username {
+      display: flex;
+      align-self: center;
+      font-size: 14px;
+      gap: 28px;
+
+      .actionBtn {
+        transition: color 0.2s ease;
+      }
+
+      .actionBtn:hover {
+        color: #0070ec;
+      }
+    }
+
+    .inviteBtn {
+      padding-top: 4px;
+      padding-right: 6px;
+      color: #101055;
+      transition: color 0.2s ease;
+    }
+
+    .inviteBtn:hover {
+      color: #0000c4;
+    }
+  }
+}

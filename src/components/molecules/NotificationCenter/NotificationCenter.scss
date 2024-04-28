@@ -1,0 +1,118 @@
+.notificationCenter {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+
+  .bell-button {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: 0;
+    cursor: pointer;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    max-width: 40px;
+    border-radius: 100%;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2f2f2f;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 7px 11px -1px rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: #e1e1e1;
+    }
+  }
+
+  .bell-active {
+    color: white;
+    background-color: #006de6;
+
+    &:hover {
+      background-color: #015ac1;
+    }
+  }
+
+  .unread {
+    z-index: 15;
+    position: absolute;
+    top: -4px;
+    right: 2px;
+    background-color: red;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 4px;
+    text-align: center;
+  }
+
+  .notification-container {
+    position: absolute;
+    z-index: 500;
+    right: -5px;
+    top: 46px;
+    margin-top: 6px;
+    background-color: white;
+    border-radius: 18px;
+    border: 1px solid #2f2f2f;
+    max-width: 22rem;
+    min-width: 12rem;
+    max-height: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 8px;
+    overflow-y: hidden;
+    overflow-y: auto;
+    box-shadow: -6px 14px 16px -6px rgba(0, 0, 0, 0.67);
+
+    .msg-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+      background-color: #ececec92;
+      border: 1px solid #2f2f2f1c;
+      border-radius: 11px;
+      padding: 6px 6px;
+      cursor: pointer;
+      min-width: 20rem;
+      font-size: 0.8rem;
+      transition: background-color 0.2s ease;
+
+      .icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .msg {
+        width: 100%;
+        display: block;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &:hover {
+        background-color: #006eec37;
+      }
+
+      &:active {
+        transform: scale(95%);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

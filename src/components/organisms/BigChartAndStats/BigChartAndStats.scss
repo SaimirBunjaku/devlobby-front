@@ -1,0 +1,10 @@
+.chart-and-stats {
+    display: flex;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .chart-and-stats {
+      flex-direction: column;
+    }
+  }
+  

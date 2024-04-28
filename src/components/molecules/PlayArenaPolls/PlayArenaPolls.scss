@@ -1,0 +1,78 @@
+.play-arena-polls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Poppins";
+    margin-top: 50px;
+    background-color: #282828;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .polls-image {
+    flex: 1;
+    max-width: 60%;
+    margin-bottom: 20px;
+    margin-left: 100px;
+  }
+  
+  .polls-image img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    justify-content: center;
+  }
+  
+  .polls-content {
+    flex: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .polls-heading {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .polls-content p {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .poll-button {
+    background-color: #3751ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .poll-button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .play-arena-polls-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .polls-image {
+      max-width: 100%;
+      margin-bottom: 20px;
+      margin-left: 0;
+    }
+  
+    .polls-content {
+      max-width: 100%;
+      text-align: center;
+    }
+  }

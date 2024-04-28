@@ -1,0 +1,454 @@
+/*
+masi qe navbari osht display:flex, justify-content:space-between,
+ja lojna qet max width logos (ka ana e majt) edhe butonav (ka ana e djatht)
+qe mos me livrit menuja e navbarit
+*/
+$logo-max-width: 236px;
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin rounded-corners($radius: 1rem) {
+  border-radius: $radius;
+}
+
+@mixin button-styles($bg-color, $text-color, $hover-color) {
+  padding: 0.5rem 1rem;
+  height: 40px;
+  font-weight: 550;
+  width: 110px;
+  margin-left: 0.5rem;
+  border: none;
+  color: $text-color;
+  background-color: $bg-color;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+.butonat-menu {
+  display: none;
+}
+.butonat-nav {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+.butonat-client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  .login a {
+    text-decoration: none;
+    color: white;
+  }
+  .signup a {
+    text-decoration: none;
+    color: black;
+  }
+  .profile a {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+  button {
+    @include button-styles(#0070ec, #ffffff, blue);
+    white-space: nowrap;
+  }
+
+  button:last-child {
+    @include button-styles(#ffffffff, #ffffff, rgb(208, 212, 207));
+    color: black;
+    white-space: nowrap;
+  }
+}
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid white;
+  max-height: 70px;
+
+  &.menu-open {
+    position: relative;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 1s;
+    transform: translateX(-100%);
+    z-index: 30;
+    text-decoration: none;
+  }
+  .user-greeting {
+    position: relative;
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 0 50px #004494;
+      z-index: 100;
+      width: 236px;
+      border-radius: 20px;
+      display: flex; // Set dropdown to use flex layout
+      flex-direction: column; // Stack items vertically
+      align-items: center; // Center items horizontally within the flex container
+
+      a,
+      button {
+        border-radius: 20px;
+        display: block;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        width: 100%; // Width is reduced to allow padding to be considered within the total width
+        text-align: center;
+        box-sizing: border-box; // Include padding in the width calculation
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+
+      button {
+        @include button-styles(#0070ec, #ffffff, darken(#0070ec, 10%));
+        width: 236px; // Adjust width to account for padding, ensuring button is centered
+        box-sizing: border-box; // Ensure the width accounts for padding
+        margin-left: 0;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .user-greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .profile {
+      max-width: 60px;
+    }
+  }
+  .butonat-client {
+    max-width: $logo-max-width;
+  }
+  &-logo {
+    height: auto;
+    max-width: 236px;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-left: -30px;
+      width: $logo-max-width;
+      height: auto;
+    }
+  }
+  .navbar-logout {
+    display: none;
+  }
+  &-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    height: 55px;
+    margin: 0 auto;
+    padding-left: 5px;
+    background-color: #282828;
+    border-radius: 2rem;
+
+    li {
+      margin-right: 10px;
+
+      a,
+      .nav-link {
+        color: #ffffff;
+        padding: 0.7rem 1rem;
+        text-decoration: none;
+        &:hover {
+          color: gray;
+        }
+
+        &.home {
+          background-color: #fff;
+          color: #1a1a1a;
+          font-weight: 550;
+          border-radius: 2rem;
+          &:hover {
+            color: white;
+            background-color: gray;
+          }
+        }
+
+        &.playcodearena {
+          background-color: #333333;
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding-right: 0px;
+
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #8b8a8a;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  }
+  &.menu-open {
+    .hamburger-menu {
+      // Styles for X icon
+      .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 7.5px);
+      }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -7.5px);
+      }
+    }
+  }
+  .butonat button {
+    display: none;
+  }
+  // per tableta
+  .navbar-profile-icon {
+    display: flex; // Use flex to center the content inside the button
+    align-items: center;
+    justify-content: center;
+    background: transparent; // No background color for the button
+    border: none; // Remove the default button border
+    cursor: pointer; // Change mouse cursor on hover
+    padding: 0.5rem; // Add some padding for touch area
+    margin-right: 1rem; // Add some margin if needed
+    font-size: 0.85rem;
+
+    &:focus {
+      outline: none; // Remove focus outline if it's not needed or style it accordingly
+    }
+
+    i {
+      color: white; // Example color, adjust as needed
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .navbar-profile-icon {
+      display: block; // Ensure it's displayed
+    }
+    .navbar-logout {
+      display: block;
+    }
+
+    .butonat-nav.login {
+      @include button-styles(
+        #0070ec,
+        #ffffff,
+        darken(#0070ec, 10%)
+      ); // Using your mixin for button styles
+      a {
+        text-decoration: none;
+        color: inherit; // Ensures the text color is the same as the button
+        display: block; // Makes the link fill the button for better clickability
+      }
+    }
+    .navbar-logout {
+      @include button-styles(#0070ec, #ffffff, darken(#0070ec, 10%));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .butonat button {
+      display: block;
+      margin-bottom: 10px;
+      @include button-styles(#0070ec, #ffffff, blue);
+    }
+    .butonat-client {
+      display: none;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      background-color: #333333;
+      position: absolute;
+      height: auto;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      .butonat-nav {
+        padding: 0.5rem 1rem;
+        height: 40px;
+        font-weight: 550;
+        width: 250px;
+        margin-left: 0.5rem;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        &:first-child {
+          background-color: rgb(35, 35, 208);
+          color: white;
+        }
+
+        &:last-child {
+          background-color: white;
+        }
+      }
+      .butonat-nav.login a {
+        text-decoration: none;
+        color: white;
+        border-bottom: none;
+      }
+      .butonat-nav.login button {
+        &:first-child {
+          background-color: rgb(35, 35, 208);
+          color: white;
+        }
+      }
+      .butonat-nav.signup a {
+        text-decoration: none;
+        color: black;
+      }
+
+      &.menu-open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 100%;
+        padding-left: 3vh;
+        margin-top: 100px;
+        background-color: #282828;
+
+        a {
+          border-bottom: 1px solid white;
+        }
+        @include rounded-corners;
+        .butonat-nav {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      li {
+        margin: 40px 0px;
+
+        .nav-link {
+          padding: 1rem;
+          color: #fff;
+          border-bottom: solid rgb(215, 213, 213);
+
+          &.home {
+            background-color: #fff;
+          }
+          &.playcodearena {
+            background-color: #333333;
+            border-radius: 0;
+          }
+        }
+      }
+
+      .navbar-buttons {
+        margin-top: 20px;
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: block;
+      z-index: 2;
+    }
+  }
+  // per telefona
+  @media screen and (max-width: 480px) {
+    .butonat-nav.login {
+      &:first-child {
+        background-color: rgb(35, 35, 208);
+        color: white;
+      }
+    }
+    .hamburger-menu {
+      display: block;
+    }
+    .navbar-links {
+      margin: 0;
+      padding: 0;
+      &.menu-open {
+        text-align: center;
+        margin-top: 100px;
+        padding-left: 4vh;
+        .butonat-nav {
+          padding: 0.5rem 1rem;
+          height: 40px;
+          font-weight: 550;
+          width: 250px;
+          margin-left: 0.5rem;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 2rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          &:first-child {
+            background-color: #0070ec;
+            color: white;
+          }
+
+          &:last-child {
+            background-color: white;
+          }
+        }
+        li {
+          margin: 25px;
+          text-decoration: none;
+        }
+      }
+    }
+    .hamburger-menu {
+      padding: 0;
+    }
+  }
+}

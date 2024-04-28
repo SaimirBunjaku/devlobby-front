@@ -1,0 +1,53 @@
+.dashboard-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 13px;
+  width: 100%;
+  color: #222222;
+  margin-left: 16%;
+}
+
+.dashboard-ribbon h2 {
+  width: 50%;
+}
+
+
+/*styles per dark mode*/
+
+.dashboard-ribbon.dark-mode h2 {
+  color: #ffffff;
+}
+
+/*query per tablet*/
+@media screen and (max-width: 1024px) {
+  .dashboard-ribbon {
+    margin-left: 0;
+  }
+  .dashboard-ribbon h2 {
+    display: none;
+  }
+  .dashboard-search-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
+/* query per phones */
+@media screen and (max-width: 768px) {
+  .dashboard-ribbon {
+    margin-left: 0;
+  }
+  .dashboard-ribbon h2 {
+    display: none;
+  }
+  .dashboard-search-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+

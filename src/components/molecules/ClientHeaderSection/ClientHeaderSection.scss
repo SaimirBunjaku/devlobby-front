@@ -1,0 +1,21 @@
+.clientHeaderSection {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    background-color: #1a1a1a;
+    height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+
+    @media screen and (max-width: 768px) {
+      height: auto;
+    }
+  }
+}

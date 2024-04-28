@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.adminHeaderComponent {
+
+  z-index: 0;
+  
+  .dashboard-header {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    background-color: rgb(28, 64, 119);
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: poppins;
+  }
+
+  .left-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+  }
+
+  .left-content h3 {
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .left-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .left-content p {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 200;
+  }
+
+  .right-content {
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .right-content img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 1rem;
+  }
+
+  .transition {
+    transition: background-color 0.3s ease;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .dashboard-header {
+      margin: 40px 20px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .left-content {
+      text-align: center;
+    }
+
+    .right-content {
+      flex: none;
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .dashboard-header {
+      margin: 15px auto;
+      max-width: 90%;
+    }
+
+    .right-content img {
+      max-width: 40%;
+    }
+  }
+}

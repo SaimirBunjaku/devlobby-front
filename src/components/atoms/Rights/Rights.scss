@@ -1,0 +1,48 @@
+.rights{
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+
+        .links{
+            a{
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s;
+                margin-right: 40px;
+                display: inline;
+    
+                &:hover{
+                    color: #0070ec;
+                }
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: 768px){
+    .rights{
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            font-size: 14px;
+            text-align: center;
+            .links{
+                a{
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

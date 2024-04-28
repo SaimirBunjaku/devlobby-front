@@ -1,0 +1,20 @@
+.challenge-header{
+    font-family: 'Poppins', sans-serif;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+
+    h5{
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .challenge-header{
+        width: 90%;
+    }
+}

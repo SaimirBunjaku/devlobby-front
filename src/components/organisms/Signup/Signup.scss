@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2vh;
+  padding-top: 0;
+  background-color: #1a1a1a;
+  font-family: 'Poppins';
+
+  .signup-image-section img {
+    height: 100vh;
+    width: 100%;
+    max-width: 700px;
+    max-height: 675px;
+    border-radius: 10px;
+  }
+
+  .signup-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    img {
+      width: 150px;
+    }
+
+    h2 {
+      color: #4a4a4a;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #6a6f7d;
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+
+      hr {
+        flex-grow: 1;
+        border: none;
+        border-top: 1px solid #dfe1e5;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        flex-grow: 1;
+      }
+
+      &:before {
+        margin-right: 1rem;
+      }
+
+      &:after {
+        margin-left: 1rem;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border: 1px solid #dfe1e5;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .terms {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+
+      label {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .signup-btn {
+      background-color: #0070ec;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    .signup-btn:hover {
+      background-color: blue;
+      transition: 0.5s;
+    }
+
+    .signin-redirect {
+      margin-top: 2rem;
+      color: #6a6f7d;
+
+      a {
+        color: #673ab7;
+        text-decoration: none;
+      }
+    }
+
+    footer {
+      color: #adb5bd;
+      font-size: 0.8rem;
+    }
+  }
+  .error-message {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .success-message {
+    color: white; // Light green color
+    font-size: 3rem; // Larger font for visibility
+    text-align: center;
+    background-color: #0e0249; //#0e0249
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 80px;
+
+    video {
+      margin-top: 20px; // Space from the success message
+      border-radius: 10px; // Rounded corners for the video
+      width: 80%; // Default width
+      height: auto; // Maintain aspect ratio
+    }
+  }
+
+  @media (max-width: 480px), (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh; // Ensure container takes full height
+    width: 100vw; // Ensure container takes full width
+    padding: 0; // Optional: Adjust padding as needed for mobile
+    margin: 0;
+
+    .signup-image-section {
+      display: none;
+    }
+
+    .signup-form {
+      width: 100%; // Use 100% of viewport width
+      max-width: none; // Remove max-width restriction
+      margin: 0; // Remove any margin that might restrict the width
+      padding: 1rem 0; // Adjust padding to fit smaller screens
+      border-radius: 0; // Optional: Adjust border-radius for mobile style
+      height: 100%;
+      input {
+        width: 60%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border: 1px solid #dfe1e5;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .signup-btn {
+        width: 60%;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .success-message {
+      font-size: 1rem; // Smaller font size for mobile
+
+      video {
+        width: 95%; // Make video wider on smaller screens to utilize space
+        margin-top: 15px; // Adjust margin top for mobile
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .success-message {
+      font-size: 1.5rem; // Adjust font size for tablets
+
+      video {
+        width: 90%; // Adjust video width for tablets
+        margin-top: 15px; // Adjust margin top for tablets
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.chal-button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 7px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        background-color: #FFA500;
+        color: #1a1a1a;
+    }
+    &:active{
+        background-color: #FF4500;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        transform: translateY(4px);
+    }
+}
+
+.chal-button:last-child{
+    color: #FF4500;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 7px;
+    width: fit-content;
+    box-shadow: 0 !important;
+    margin: 0 auto;
+}

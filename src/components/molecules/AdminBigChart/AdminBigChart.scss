@@ -1,0 +1,70 @@
+.admin-big-chart-container {
+  width: 60%;
+  margin-left: 80px;
+}
+
+.admin-big-chart{
+  width: 100%
+}
+
+.admin-big-chart-heading {
+  font-size: 1.5rem; 
+  color: #ffffff; 
+}
+
+.admin-big-chart canvas {
+  background-color: transparent !important; 
+}
+
+.admin-big-chart-grid {
+  color: rgba(255, 255, 255, 0.5); 
+}
+
+.admin-big-chart-axis-labels {
+  color: #ffffff; 
+}
+
+@media only screen and (min-width: 600px) {
+  .admin-big-chart-container {
+    width: 60%;
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .admin-big-chart-container {
+    width: 90%;  
+    margin-left: 2rem;    
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .chart-and-stats {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .admin-big-chart-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .admin-big-chart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      height: auto;
+  }
+  .admin-big-chart canvas{
+    width: 100%;
+}
+
+}

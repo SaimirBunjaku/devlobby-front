@@ -1,0 +1,39 @@
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+  
+    button {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      color: #333;
+      padding: 8px 12px;
+      margin: 0 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+  
+      &.active {
+        background-color: #0070ec;
+        color: #fff;
+      }
+  
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+  
+      button {
+        margin: 4px;
+      }
+    }
+  }
