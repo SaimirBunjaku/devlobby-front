@@ -77,7 +77,7 @@ const Navbar = () => {
     {
       id: 4,
       message:
-        'Shpat Spahiu sent you a friend request! And also went on to tell a story about a picnic he was in.'
+        'Saimir Bunjaku sent you a friend request! And also went on to tell a story about a picnic he was in.'
     },
     { id: 5, message: 'Test1' },
     { id: 6, message: 'Test2' },
